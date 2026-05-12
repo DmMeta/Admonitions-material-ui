@@ -309,3 +309,34 @@ body {
 .card-link:hover {
   text-decoration: underline;
 }
+
+/* ---------------------------HOVER----------------------------------- */
+.pop-up {
+  border-bottom: 1px dotted #333;
+  cursor: help;
+  position: relative;
+}
+
+
+.pop-up::after {
+  content: attr(data-tooltip); 
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--note-bg);
+  color: var(--note-border);
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.pop-up:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
