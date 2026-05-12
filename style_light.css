@@ -118,13 +118,13 @@ body {
     color: var(--note-color);
 }
 
-.admonition.warning {
+.admonition.warningg {
   border-color: var(--warning-border);
 }
-.admonition.warning .admonition-title {
+.admonition.warningg .admonition-title {
   background-color: var(--warning-bg);
 }
-.admonition.warning .icon {
+.admonition.warningg .icon {
     color: var(--warning-color);
 }
 
