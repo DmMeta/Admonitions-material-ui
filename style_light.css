@@ -20,9 +20,9 @@ body {
   --note-bg: rgb(236, 243, 255);
   --note-border: var(--note-color);
 
-  --warningg-color: #ff9100;
-  --warningg-bg: rgb(255, 244, 229);
-  --warningg-border: var(--warningg-color);
+  --warning-color: #ff9100;
+  --warning-bg: rgb(255, 244, 229);
+  --warning-border: var(--warning-color);
 
   --tip-color: #00bfa5;
   --tip-bg: rgb(229, 248, 246);
@@ -118,14 +118,18 @@ body {
     color: var(--note-color);
 }
 
-.admonition.warningg {
-  border-color: var(--warningg-border);
+.admonition.warning {
+  border-color: var(--warning-border);
 }
-.admonition.warningg .admonition-title {
-  background-color: var(--warningg-bg);
+.admonition.warning .admonition-title {
+  background-color: var(--warning-bg);
 }
-.admonition.warningg .icon {
-    color: var(--warningg-color);
+.admonition.warning .icon {
+    color: var(--warning-color);
+}
+.admonition.warning .admonition-content,
+.admonition.warning .admonition-content p {
+    font-weight: normal !important;
 }
 
 
