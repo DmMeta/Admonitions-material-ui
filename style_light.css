@@ -1,0 +1,307 @@
+/* Light Theme */
+
+
+/*Font family*/
+@font-face {
+  font-family: 'Robot Slab';
+  src: url('fonts/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+
+  --bg-color: #ffffff;
+  --text-color: #202122;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  --note-color: #448aff;
+  --note-bg: rgb(236, 243, 255);
+  --note-border: var(--note-color);
+
+  --warning-color: #ff9100;
+  --warning-bg: rgb(255, 244, 229);
+  --warning-border: var(--warning-color);
+
+  --tip-color: #00bfa5;
+  --tip-bg: rgb(229, 248, 246);
+  --tip-border: var(--tip-color);
+
+  --info-color: #00b8d4;
+  --info-bg: rgb(229, 248, 251);
+  --info-border: var(--info-color);;
+
+  --question-color: #64dd17;
+  --question-bg: rgb(239, 252, 231);
+  --question-border: var(--question-color);
+  
+  --quote-color: #9e9e9e;
+  --quote-bg: rgb(245, 245, 245);
+  --quote-border: var(--quote-color);
+  
+
+  --exercise-color: #7c4dff;
+  --exercise-bg: rgb(242, 237, 255);
+  --exercise-border: var(--exercise-color);
+  --exercise-glow: rgba(242, 237, 255, 0.219);
+
+    /* Example is the same in colour as question */
+  --example-color: var(--exercise-color);
+  --example-bg: var(--exercise-bg);
+  --example-border: var(--exercise-border);
+  --example-glow: var(--exercise-glow);
+
+
+  --solution-color: #00c853;
+  --solution-bg: rgb(229, 249, 237);
+  --solution-border: var(--solution-color);
+  --solution-glow: rgba(229, 249, 237, 0.233);
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Roboto Slab ,system-ui, -apple-system, sans-serif;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+/* Base Admonition */
+.admonition {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03),
+              0 4px 6px -1px var(--shadow-color),
+              0 2px 4px -1px var(--shadow-color);
+  margin-bottom: 1rem;
+}
+
+.admonition-title {
+  display: flex;
+  align-items: center;
+  font-weight: 650;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  color: var(--text-color);
+  /*extra border below the admonition title. Not present in Mkdocs material UI theme*/
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admonition .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 30px; /*changes the icon actual size*/
+  margin-right: 8px;
+}
+
+.admonition-content {
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Type-Specific Styles */
+.admonition.note {
+  border-color: var(--note-border);
+}
+.admonition.note .admonition-title {
+  background-color: var(--note-bg);
+}
+.admonition.note .icon {
+    color: var(--note-color);
+}
+
+.admonition.warning {
+  border-color: var(--warning-border);
+}
+.admonition.warning .admonition-title {
+  background-color: var(--warning-bg);
+}
+.admonition.warning .icon {
+    color: var(--warning-color);
+}
+
+
+.admonition.tip {
+  border-color: var(--tip-border);
+}
+.admonition.tip .admonition-title {
+  background-color: var(--tip-bg);
+}
+.admonition.tip .icon {
+  color: var(--tip-color);
+}
+
+
+.admonition.info {
+  border-color: var(--info-border);
+}
+.admonition.info .admonition-title {
+  background-color: var(--info-bg);
+}
+.admonition.info .icon {
+  color: var(--info-color);
+}
+
+
+.admonition.question {
+  border-color: var(--question-border);
+}
+.admonition.question .admonition-title {
+  background-color: var(--question-bg);
+}
+.admonition.question .icon {
+    color: var(--question-color);
+
+}
+
+.admonition.quote {
+  border-color: var(--quote-border);
+}
+.admonition.quote .admonition-title {
+  background-color: var(--quote-bg);
+}
+.admonition.quote .icon {
+    color: var(--quote-color);
+}
+
+.admonition.example {
+  border-color: var(--example-border);
+}
+.admonition.example .admonition-title {
+  background-color: var(--example-bg);
+}
+.admonition.example .icon {
+  color: var(--example-color);
+}
+
+.admonition.exercise {
+  border-color: var(--exercise-border);
+}
+.admonition.exercise .admonition-title {
+  background-color: var(--exercise-bg);
+}
+.admonition.exercise .icon {
+  color: var(--exercise-color);
+}
+
+.admonition.solution {
+  border-color: var(--solution-border);
+
+}
+.admonition.solution .admonition-title {
+  background-color: var(--solution-bg);
+}
+.admonition.solution .icon {
+    color: var(--solution-color);
+}
+
+/* Improve details/summary appearance */
+.admonition[open] {
+  margin-bottom: 1rem;
+}
+
+.admonition > summary {
+  list-style: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.admonition > summary::-webkit-details-marker {
+  display: none;
+}
+
+/*dropdown arrow functionality */
+.dropdown-arrow {
+  margin-left: auto;
+  color: var(--exercise-color);
+  transition: transform 0.2s ease-in-out;
+  font-size: 1.3em;
+  flex-shrink: 0;
+}
+
+.admonition.solution .dropdown-arrow {
+  color: var(--solution-arrow);
+}
+
+.admonition[open] .dropdown-arrow {
+  transform: rotate(90deg) scale(1.2);
+}
+
+/* =================================================================================== */
+.content-wrapper {
+  max-width: 900px; /* Hard adjusted */
+  margin: 0 auto;   /* Centers the entire block on the page */
+}
+
+/* Container for the side-by-side layout */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 100%; 
+  justify-content: start;
+}
+
+/* The Card Base */
+.custom-card {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px; /* Matches the sharper radius in your image */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  box-sizing: border-box;
+}
+
+/* The Hover Effect: Raise and Lighten */
+.custom-card:hover {
+  transform: translateY(-4px); /* Raises the card a tiny bit */
+  border-color: rgba(68, 138, 255, 0.4); /* Lightened/Blueish border on hover */
+  box-shadow: 0 8px 16px var(--shadow-color); /* Deeper shadow when raised */
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  gap: 10px;
+}
+
+.card-title .iconify {
+  font-size: 1.5rem;
+}
+
+.card-body {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  flex-grow: 1; /* Pushes the link to the bottom */
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #448aff; /* Matches your note-color */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admonitions</title>
+
+  <!-- Material Design Icons using iconify -->
+  <!-- Info here: https://pictogrammers.com/docs/guides/iconify/-->
+  
+  <link rel="stylesheet" href="style_light.css">
+</head>
+<body>
+
+  <div class="admonition note">
+    <div class="admonition-title">
+      <span class="icon">
+        <span class="iconify" data-icon="mdi:pencil-circle"></span>
+      </span>
+        Σημείωση
+    </div>
+    <div class="admonition-content">
+      Η εφαρμογή του OpenMP στηρίζεται σε μοντέλο κοινής μνήμης.
+    </div>
+  </div>
+
+  <div class="admonition warning">
+    <div class="admonition-title">
+       <span class="icon">
+        <span class="iconify" data-icon="mdi:alert"></span> 
+       </span>
+      Προσοχή
+    </div>
+    <div class="admonition-content">
+      Στη γλώσσα C, τα strings δεν αποτελούν ξεχωριστό τύπο δεδομένων...
+    </div>
+  </div>
+
+  <div class="admonition tip">
+    <div class="admonition-title">
+      <span class="icon">
+          <span class="iconify" data-icon="mdi:fire"></span>
+      </span>
+      Συμβουλή
+    </div>
+    <div class="admonition-content">
+      Χρησιμοποιήστε το pragma omp parallel για να δημιουργήσετε νήματα.
+    </div>
+  </div>
+
+  <div class="admonition info">
+    <div class="admonition-title">
+      <span class="icon">
+          <span class="iconify" data-icon="mdi:information"></span>
+      </span>
+      Πληροφορία
+    </div>
+    <div class="admonition-content">
+      Το OpenMP είναι εύκολο στη χρήση και υποστηρίζεται από πολλούς compilers.
+    </div>
+  </div>
+
+  <div class="admonition question">
+    <div class="admonition-title">
+      <span class="icon">
+          <span class="iconify" data-icon="mdi:help-circle"></span>
+      </span>
+      Ερώτηση
+    </div>
+    <div class="admonition-content">
+      Γιατί χρειάζεται synchronization σε παράλληλες εφαρμογές;
+    </div>
+  </div>
+
+  <div class="admonition example">
+    <div class="admonition-title">
+    <span class="icon">
+        <span class="iconify" data-icon="mdi:test-tube"></span>
+    </span>
+      Παράδειγμα
+    </div>
+    <div class="admonition-content">
+       Αυτό είναι ένα παράδειγμα χρήσης του OpenMP.
+    </div>
+  </div>
+
+    <div class="admonition quote">
+    <div class="admonition-title">
+    <span class="icon">
+        <span class="iconify" data-icon="mdi:format-quote-close"></span>
+    </span>
+      Jim's Quote
+    </div>
+    <div class="admonition-content">
+        "Parallel programming is like trying to herd cats, but with more synchronization issues."
+    </div>
+  </div>
+
+  <details class="admonition exercise">
+    <summary class="admonition-title">
+      <span class="icon">
+          <span class="iconify" data-icon="mdi:flask-round-bottom"></span>
+      </span>
+      Άσκηση
+      <span class="dropdown-arrow">
+         <span class="iconify" data-icon="mdi:chevron-right"></span>
+      </span>
+    </summary>
+    <div class="admonition-content">
+        Γράψτε ένα πρόγραμμα που να υπολογίζει το άθροισμα ενός πίνακα με OpenMP.
+    </div>
+  </details>
+
+
+  <details class="admonition solution">
+    <summary class="admonition-title">
+        <span class="icon">
+            <span class="iconify" data-icon="mdi:check"></span>
+        </span>
+        Λύση
+        <span class="dropdown-arrow">
+            <span class="iconify" data-icon="mdi:chevron-right"></span>
+        </span>
+    </summary>
+    <div class="admonition-content">
+      <pre><code>
+#include <omp.h>
+int sum = 0;
+#pragma omp parallel for reduction(+:sum)
+for (int i = 0; i < n; i++) {
+    sum += arr[i];
+}
+        </code></pre>
+    </div>
+  </details>
+
+  <button id="theme-toggle">Toggle Theme</button>
+
+
+<script>
+  const body = document.body;
+  const toggleButton = document.getElementById('theme-toggle');
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('light-theme');
+  });
+</script>
+
+
+
+<!-- Grid card trial -->
+
+<div class="content-wrapper">
+   <h2>1.1.8 - Συμπληρωματικό Εκπαιδευτικό Υλικό</h2>
+   <div class="card-container">
+  <div class="custom-card">
+    <div class="card-title">
+      <span class="iconify" data-icon="fxemoji:ufo"></span>
+      Tutorial - Εισαγωγή στην Παράλληλη Υπολογιστική
+    </div>
+    <div class="card-body">
+      Μία καλή εισαγωγή στην Παράλληλη Υπολογιστική υπό τη μορφή tutorial...
+    </div>
+    <a href="#" class="card-link">
+      <span class="iconify" data-icon="mdi:arrow-right"></span>
+      Introduction to Parallel Computing
+    </a>
+  </div>
+
+  <div class="custom-card">
+    <div class="card-title">
+      <span class="iconify" data-icon="emojione:memo"></span>
+      Άρθρο - Τι είναι η Παράλληλη Υπολογιστική
+    </div>
+    <div class="card-body">
+      Ένα ενδιαφέρον άρθρο της <b>IBM</b> σχετικά με το τι είναι η Παράλληλη Υπολογιστική...
+    </div>
+    <a href="#" class="card-link">
+      <span class="iconify" data-icon="mdi:arrow-right"></span>
+      What is parallel computing?
+    </a>
+  </div>
+</div>
+</div>
+
+
+
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+</body>
+</html>
