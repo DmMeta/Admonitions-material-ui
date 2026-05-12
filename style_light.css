@@ -311,14 +311,14 @@ body {
 }
 
 /* ---------------------------HOVER----------------------------------- */
-.pop-up {
+.pop-up_custom {
   border-bottom: 1px dotted #333;
   cursor: help;
   position: relative;
 }
 
 
-.pop-up::after {
+.pop-up_custom::after {
   content: attr(data-tooltip); 
   position: absolute;
   bottom: 125%;
@@ -336,7 +336,7 @@ body {
   transition: opacity 0.2s ease-in-out;
 }
 
-.pop-up:hover::after {
+.pop-up_custom:hover::after {
   opacity: 1;
   visibility: visible;
 }
